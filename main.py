@@ -11,6 +11,8 @@ from sklearn.svm import LinearSVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+import tensorflow
+from tensorflow import keras
 import gensim
 import gensim.downloader as api
 from keras.preprocessing.sequence import pad_sequences
@@ -109,7 +111,7 @@ def binary_lstm_model(length):
 
     model_lstm.add(Dropout(0.2))
 
-    model_lstm.add(Dense(2, activation='sigmoid'))
+    model_lstm.add(Dense(1, activation='sigmoid'))
 
     model_lstm.compile(optimizer=Adam(), loss='binary_crossentropy', metrics=['accuracy'])
 
