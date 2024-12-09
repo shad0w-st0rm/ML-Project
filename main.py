@@ -80,7 +80,7 @@ def clean_text(text):
     return cleaned_text
 
 # Define dataset files (one file per dataset)
-dataset_files = ["sent_train1.csv", "sent_train2.csv", "sent_train3.csv"]
+dataset_files = ["financial_dataset.csv", "hotel_dataset.csv", "movie_dataset.csv"]
 
 # Function to process and train models for each dataset
 def process_and_train(file_path):
