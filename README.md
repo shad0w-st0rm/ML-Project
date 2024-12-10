@@ -6,7 +6,7 @@ We had 3 total datasets, which included a financial dataset that classified fina
 
 To do this, we first cleaned and preprocessed the text by removing unwanted elements such as URLs, punctuation, numbers, and stopwords. These words were then lemmatized to their root forms. The cleaned text was later converted to a vector mapping representation using the word2vec model. For the simple classifier models, namely the logistic regression, linear SVM, and random forest models, we averaged the word2vec vector for each word in the input sentence to obtain a single vector as input for each training example. We designed two LSTM models, a binary classifier and a multiclass classifier as well, in which we used padded vector sequences so all inputs were the same length. Additionally, we had to convert the outputs for the multiclass classifiers into one hot encoded outputs rather than numerically (such as 1, 2, 3). For all of the models, the 5 star rating system had to be decremented to a 0-4 value for better results and ‘positive’ and ‘negative’ was changed into 1 and 0. Each of these models was trained with an 80-20 training-testing split. The accuracies were then outputted based on the testing set and were compared/evaluated across all datasets and models.
 
-NOTE: The Google word2vec pretrained model we used is very large, so we could not upload it in our zip file. Instead run the below python code to be able to create a local copy and then our code should work.
+NOTE: The Google word2vec pretrained model we used is very large, so we could not upload it in our zip file. Instead run the below python code in the project folder to use gensim to be able to download a local copy and then our code should work.
 
 ```python 
 import gensim.downloader as api
